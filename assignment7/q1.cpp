@@ -62,7 +62,7 @@ int main(){
     for(int i=0;i<n;i++) cin >> arr[i];
 
     cout << "\nSelect Sorting Algorithm:\n";
-    cout << "1. Selection Sort\n2. Insertion Sort\n3. Bubble Sort\n4.";
+    cout << "1. Selection Sort\n2. Insertion Sort\n3. Bubble Sort\n.";
     cin >> choice;
 
     vector<int> arrCopy = arr; // keep original array intact
