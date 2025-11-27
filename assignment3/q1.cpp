@@ -8,10 +8,16 @@ class Stack {
     int top;
 
 public:
-    Stack() { top = -1; }
+    Stack() { 
+        top = -1; 
+    }
 
-    bool isFull() { return top == MAX - 1; }
-    bool isEmpty() { return top == -1; }
+    bool isFull() { 
+        return top == MAX - 1; 
+    }
+    bool isEmpty() { 
+        return top == -1; 
+    }
 
     void push(int x) {
         if (isFull()) {
@@ -67,13 +73,20 @@ int main() {
             s.push(val);
             break;
 
-        case 2: s.pop(); break;
-        case 3: cout << (s.isEmpty() ? "Stack is Empty\n" : "Stack is NOT Empty\n"); break;
-        case 4: cout << (s.isFull() ? "Stack is Full\n" : "Stack is NOT Full\n"); break;
-        case 5: s.display(); break;
-        case 6: s.peek(); break;
-        case 7: return 0;
-        default: cout << "Invalid Choice!\n";
+        case 2: 
+            s.pop(); break;
+        case 3: 
+            cout << (s.isEmpty() ? "Stack is Empty\n" : "Stack is NOT Empty\n"); break;
+        case 4: 
+            cout << (s.isFull() ? "Stack is Full\n" : "Stack is NOT Full\n"); break;
+        case 5: 
+            s.display(); break;
+        case 6: 
+            s.peek(); break;
+        case 7: 
+            return 0;
+        default: 
+            cout << "Invalid Choice!\n";
         }
     }
 }
