@@ -5,7 +5,7 @@ using namespace std;
 
 void firstNonRepeating(string s) {
     queue<char> q;
-    unordered_map<char, int> freq;
+    int freq;
 
     for (char c : s) {
         freq[c]++;
