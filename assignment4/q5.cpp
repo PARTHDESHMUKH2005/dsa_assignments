@@ -48,11 +48,7 @@ int main() {
     return 0;
 }
 b.
-  #include <iostream>
-#include <queue>
-using namespace std;
-
-class StackOneQueue {
+  class StackOneQueue {
     queue<int> q;
 
 public:
@@ -84,6 +80,8 @@ public:
 
     bool empty() {
         return q.empty();
+
+      
     }
 };
 
