@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void improvedSelectionSort(vector<int>& arr){
+void SelectionSort(vector<int>& arr){
     int n = arr.size();
     int start = 0, end = n-1;
 
@@ -42,7 +42,7 @@ int main(){
     cout << "Enter elements: ";
     for(int i=0;i<n;i++) cin >> arr[i];
 
-    improvedSelectionSort(arr);
+    SelectionSort(arr);
 
     cout << "Sorted array: ";
     display(arr);
