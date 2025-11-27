@@ -70,12 +70,20 @@ int main() {
         cout << "\n1.Enqueue\n2.Dequeue\n3.Peek\n4.Display\n5.Exit\nChoice: ";
         cin >> choice;
         switch (choice) {
-            case 1: cout << "Enter element: "; cin >> x; q.enqueue(x); break;
-            case 2: q.dequeue(); break;
-            case 3: q.peek(); break;
-            case 4: q.display(); break;
-            case 5: break;
-            default: cout << "Invalid choice\n";
+            case 1: cout << "Enter element: ";
+                cin >> x; 
+                q.enqueue(x);
+                break;
+            case 2: q.dequeue(); 
+                break;
+            case 3: q.peek();
+                break;
+            case 4: q.display();
+                break;
+            case 5: 
+                break;
+            default:
+                cout << "Invalid choice\n";
         }
     } while (choice != 5);
     return 0;
