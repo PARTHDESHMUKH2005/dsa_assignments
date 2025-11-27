@@ -15,14 +15,14 @@ public:
         head = nullptr;
     }
 
-    // (a) Insertion at the beginning
+    // (a)
     void insertAtBeginning(int value) {
         Node* newNode = new Node{value, head};
         head = newNode;
         cout << value << " inserted at the beginning.\n";
     }
 
-    // (b) Insertion at the end
+    // (b) 
     void insertAtEnd(int value) {
         Node* newNode = new Node{value, nullptr};
         if (head == nullptr) {
@@ -36,7 +36,7 @@ public:
         cout << value << " inserted at the end.\n";
     }
 
-    // (c) Insertion before/after a specific node
+    // (c) 
     void insertBeforeAfter(int value, int target, bool after = true) {
         if (head == nullptr) {
             cout << "List is empty.\n";
@@ -45,7 +45,7 @@ public:
 
         Node* newNode = new Node{value, nullptr};
 
-        // Insert before head
+        
         if (!after && head->data == target) {
             newNode->next = head;
             head = newNode;
@@ -59,7 +59,7 @@ public:
         }
 
         if (after) {
-            // Find target node
+            
             temp = head;
             while (temp != nullptr && temp->data != target)
                 temp = temp->next;
@@ -72,7 +72,7 @@ public:
                 delete newNode;
             }
         } else {
-            // Insert before target node (not head)
+            
             if (temp->next == nullptr) {
                 cout << "Node " << target << " not found.\n";
                 delete newNode;
@@ -84,7 +84,7 @@ public:
         }
     }
 
-    // (d) Deletion from the beginning
+    // (d) 
     void deleteFromBeginning() {
         if (head == nullptr) {
             cout << "List is empty.\n";
@@ -96,7 +96,7 @@ public:
         delete temp;
     }
 
-    // (e) Deletion from the end
+    // (e) 
     void deleteFromEnd() {
         if (head == nullptr) {
             cout << "List is empty.\n";
@@ -116,7 +116,7 @@ public:
         temp->next = nullptr;
     }
 
-    // (f) Deletion of a specific node
+    // (f) 
     void deleteNode(int target) {
         if (head == nullptr) {
             cout << "List is empty.\n";
@@ -142,7 +142,7 @@ public:
         }
     }
 
-    // (g) Search for a node and display its position
+    // (g) 
     void searchNode(int target) {
         Node* temp = head;
         int pos = 1;
@@ -157,8 +157,8 @@ public:
         cout << "Node " << target << " not found.\n";
     }
 
-    // (h) Display all node values
-    void displayList() {
+    // (h) 
+void displayList() {
         if (head == nullptr) {
             cout << "List is empty.\n";
             return;
@@ -173,72 +173,3 @@ public:
     }
 };
 
-// Main function with menu
-int main() {
-    SinglyLinkedList list;
-    int choice, value, target;
-    bool after;
-
-    do {
-        cout << "\n--- Singly Linked List Menu ---\n";
-        cout << "1. Insert at Beginning\n";
-        cout << "2. Insert at End\n";
-        cout << "3. Insert Before/After a Node\n";
-        cout << "4. Delete from Beginning\n";
-        cout << "5. Delete from End\n";
-        cout << "6. Delete a Specific Node\n";
-        cout << "7. Search for a Node\n";
-        cout << "8. Display List\n";
-        cout << "9. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-
-        switch (choice) {
-            case 1:
-                cout << "Enter value to insert: ";
-                cin >> value;
-                list.insertAtBeginning(value);
-                break;
-            case 2:
-                cout << "Enter value to insert: ";
-                cin >> value;
-                list.insertAtEnd(value);
-                break;
-            case 3:
-                cout << "Enter value to insert: ";
-                cin >> value;
-                cout << "Enter target node value: ";
-                cin >> target;
-                cout << "Insert after target? (1 for yes, 0 for before): ";
-                cin >> after;
-                list.insertBeforeAfter(value, target, after);
-                break;
-            case 4:
-                list.deleteFromBeginning();
-                break;
-            case 5:
-                list.deleteFromEnd();
-                break;
-            case 6:
-                cout << "Enter node value to delete: ";
-                cin >> target;
-                list.deleteNode(target);
-                break;
-            case 7:
-                cout << "Enter node value to search: ";
-                cin >> target;
-                list.searchNode(target);
-                break;
-            case 8:
-                list.displayList();
-                break;
-            case 9:
-                cout << "Exiting...\n";
-                break;
-            default:
-                cout << "Invalid choice. Try again.\n";
-        }
-    } while (choice != 9);
-
-    return 0;
-}
